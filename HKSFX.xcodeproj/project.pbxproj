@@ -18,6 +18,7 @@
 		1A39BB0027E69C1D00060ABE /* SfxClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A39BAFF27E69C1C00060ABE /* SfxClient.swift */; };
 		1A39BB0327E69C7200060ABE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1A39BB0227E69C7200060ABE /* Alamofire */; };
 		1A39BB0627E6A1A500060ABE /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1A39BB0527E6A1A500060ABE /* KeychainSwift */; };
+		1A39BB0827F0B15100060ABE /* HKPoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A39BB0727F0B15100060ABE /* HKPoller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		1A39BAFB27E6998900060ABE /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		1A39BAFD27E6999D00060ABE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1A39BAFF27E69C1C00060ABE /* SfxClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SfxClient.swift; sourceTree = "<group>"; };
+		1A39BB0727F0B15100060ABE /* HKPoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HKPoller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				1A39BAD327E698BC00060ABE /* Assets.xcassets */,
 				1A39BAD527E698BC00060ABE /* Preview Content */,
 				1A39BAFF27E69C1C00060ABE /* SfxClient.swift */,
+				1A39BB0727F0B15100060ABE /* HKPoller.swift */,
 			);
 			path = HKSFX;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			files = (
 				1A39BB0027E69C1D00060ABE /* SfxClient.swift in Sources */,
 				1A39BAD227E698BA00060ABE /* ContentView.swift in Sources */,
+				1A39BB0827F0B15100060ABE /* HKPoller.swift in Sources */,
 				1A39BAD027E698BA00060ABE /* HKSFXApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -431,7 +435,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
