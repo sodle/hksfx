@@ -155,6 +155,7 @@ struct SfxCredentialsView: View {
 struct ContentView: View {
     @State var dataPoints: [SfxDataPoint] = []
     @State var importJobs: [ImportJob] = []
+    @State var deleteConfirmationShown: Bool = false
     
     func getDataPoints() {
         dataPoints = []
@@ -168,6 +169,12 @@ struct ContentView: View {
         }
     }
     
+    func clearCheckpoints() {
+        hkDataTypes.forEach { type in
+            HKPoller.clearAnchor(for: type)
+        }
+    }
+    
     var body: some View {
         VStack {
             SfxCredentialsView()
@@ -176,9 +183,25 @@ struct ContentView: View {
                     ImportJobView(importJob: importJob)
                 }
             }
-            Button(action: getDataPoints) {
-                Text("Get Data Points")
-            }
+            HStack {
+                Button(role: .destructive, action: {
+                    deleteConfirmationShown = true
+                }) {
+                    Text("Clear Checkpoints")
+                }
+                .padding()
+                .confirmationDialog(
+                    "Really clear all checkpoints? Ingest will restart from beginning, which may result in duplicate data.",
+                    isPresented: $deleteConfirmationShown) {
+                        Button(role: .destructive, action: clearCheckpoints) {
+                            Text("Clear")
+                        }
+                    }
+                Button(action: getDataPoints) {
+                    Text("Get Data Points")
+                }
+                .padding()
+            }.padding()
         }
     }
 }

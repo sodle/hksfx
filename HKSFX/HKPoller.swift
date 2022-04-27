@@ -20,7 +20,7 @@ extension HKQuantitySample {
                 dimensions: [
                     "sf_hires": "1"
                 ],
-                timestamp: self.endDate
+                timestamp: self.startDate
             )
         case .restingHeartRate:
             return SfxDataPoint(
@@ -31,7 +31,7 @@ extension HKQuantitySample {
                 dimensions: [
                     "sf_hires": "1"
                 ],
-                timestamp: self.endDate
+                timestamp: self.startDate
             )
         case .activeEnergyBurned:
             return SfxDataPoint(
@@ -42,7 +42,7 @@ extension HKQuantitySample {
                 dimensions: [
                     "sf_hires": "1"
                 ],
-                timestamp: self.endDate
+                timestamp: self.startDate
             )
         case .appleExerciseTime:
             return SfxDataPoint(
@@ -53,7 +53,7 @@ extension HKQuantitySample {
                 dimensions: [
                     "sf_hires": "1"
                 ],
-                timestamp: self.endDate
+                timestamp: self.startDate
             )
         case .appleStandTime:
             return SfxDataPoint(
@@ -64,7 +64,7 @@ extension HKQuantitySample {
                 dimensions: [
                     "sf_hires": "1"
                 ],
-                timestamp: self.endDate
+                timestamp: self.startDate
             )
         case .stepCount:
             return SfxDataPoint(
@@ -75,7 +75,7 @@ extension HKQuantitySample {
                 dimensions: [
                     "sf_hires": "1"
                 ],
-                timestamp: self.endDate
+                timestamp: self.startDate
             )
         default:
             return nil
@@ -151,5 +151,10 @@ struct HKPoller {
         } catch {
             fatalError("Couldn't serialize anchor for \(anchorKey(for: dataType))!")
         }
+    }
+    
+    static func clearAnchor(for dataType: HKQuantityTypeIdentifier) {
+        defaults.removeObject(forKey: anchorKey(for: dataType))
+        defaults.synchronize()
     }
 }
