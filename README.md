@@ -6,8 +6,10 @@ Sample app to pull Apple HealthKit data into SignalFX
 ## Requirements
 - An iPhone with iOS 13 or later (for HealthKit and SwiftUI support)
 - A SignalFX account ([free trial](https://www.splunk.com/en_us/download/infrastructure-monitoring.html))
-- A device or app (such as Apple Watch, Fitbit, or Whoop) that writes heart rate and exercise data to HealthKit
-- Building the app from source requires a paid Apple Developer account. If you don't have one, contact me and I might be able to send you a build via TestFlight.
+- A device or app (such as an Apple Watch, Fitbit, or Whoop) that writes heart rate and exercise data to HealthKit
+  - I have only tested with an Apple Watch, so I have no idea how it works with third-party devices.
+- Building the app from source requires a paid Apple Developer account, due to Apple's restrictions around HealthKit.
+  - If you don't have an account, contact me, and I might be able to send you a build via TestFlight.
 
 ## Configuration
 - Open the app on your iPhone
